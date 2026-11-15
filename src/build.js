@@ -2,7 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { config, photos, activities, tents, packages } from "./data.js";
+import { config, photos, activities, tents, packages, transfers } from "./data.js";
 import { posts } from "./blog.js";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -25,13 +25,13 @@ const T = {
     stats: [["150 m", "high dunes of Erg Chebbi"], ["15+", "desert activities"], ["100%", "private & tailor-made"], ["24/7", "local team on site"]],
     campTitle: "Our luxury tents", campText: "Comfort of a hotel, soul of the desert.",
     amenTitle: "Included in your stay",
-    amen: ["Private bathroom & hot shower", "King-size beds & premium linen", "Dinner & breakfast", "Berber music by the fire", "Free Wi-Fi in the lounge", "Transfers from Merzouga village"],
+    amen: ["Private bathroom & hot shower", "King-size beds & premium linen", "Dinner & breakfast", "Berber music by the fire", "Free Wi-Fi in the lounge", "Pick-up in Merzouga village"],
     actsKicker: "Adventure & culture", actsTitle: "Activities in the Sahara", actsText: "Quads, buggies, 4x4, motorbikes, camels and authentic encounters — all private and organised by our own local team.",
     expKicker: "Desert experiences", expTitle: "Our signature stays", expText: "Every stay is tailor-made. Tell us your dates and we prepare your perfect desert experience.",
     whyTitle: "Why Morocco Luxury Tents",
     why: [["Local Berber team", "We were born in Merzouga. We know every dune, every family and every secret of the desert."], ["Private & exclusive", "Private activities, small camp, personal attention — never mass tourism."], ["Safety first", "Modern vehicles, helmets, expert guides and 24/7 assistance."], ["Tailor-made", "Proposals, honeymoons, families, photographers, groups: we adapt everything."]],
     faqTitle: "Frequently asked questions",
-    faq: [["How do I get to the camp?", "We pick you up in Merzouga village and take you to the camp by 4x4 or on a camel. We can also organise private transfers from Marrakech, Fes, Errachidia airport or any city in Morocco."], ["When is the best time to visit?", "From October to May the weather is perfect. Summer is hot during the day but the nights are wonderful, and it is the season of the traditional sand bath."], ["Can I book only activities without sleeping at the camp?", "Yes. All our activities — quads, buggies, 4x4, motorbikes, camels — can be booked separately."], ["What are your prices?", "Every stay is private and tailor-made, so we prepare a personalised quote. Write to us on WhatsApp and you will receive an answer quickly."]],
+    faq: [["How do I get to the camp?", "We pick you up in Merzouga village and take you to the camp by 4x4 or on a camel. We also organise private transfers from the airports of Errachidia, Ouarzazate, Marrakech, Fes, Casablanca and any city in Morocco."], ["When is the best time to visit?", "From October to May the weather is perfect. Summer is hot during the day but the nights are wonderful, and it is the season of the traditional sand bath."], ["Can I book only activities without sleeping at the camp?", "Yes. All our activities — quads, buggies, 4x4, motorbikes, camels — can be booked separately."], ["What are your prices?", "Every stay is private and tailor-made, so we prepare a personalised quote. Write to us on WhatsApp and you will receive an answer quickly."]],
     ctaTitle: "Your night in the Sahara starts here", ctaText: "Write to us on WhatsApp or send your request — our team answers quickly.",
     duration: "Duration", level: "Level", highlights: "Highlights", related: "More activities",
     actCta: "Book this activity", actCtaText: "Private activity — price on request. Tell us your date and number of people.",
@@ -62,13 +62,13 @@ const T = {
     stats: [["150 m", "de altura en las dunas de Erg Chebbi"], ["15+", "actividades en el desierto"], ["100%", "privado y a medida"], ["24/7", "equipo local en el campamento"]],
     campTitle: "Nuestras jaimas de lujo", campText: "La comodidad de un hotel, el alma del desierto.",
     amenTitle: "Incluido en tu estancia",
-    amen: ["Baño privado y ducha caliente", "Camas king-size y ropa de cama premium", "Cena y desayuno", "Música bereber junto al fuego", "Wi-Fi gratis en el salón", "Traslado desde el pueblo de Merzouga"],
+    amen: ["Baño privado y ducha caliente", "Camas king-size y ropa de cama premium", "Cena y desayuno", "Música bereber junto al fuego", "Wi-Fi gratis en el salón", "Recogida en el pueblo de Merzouga"],
     actsKicker: "Aventura y cultura", actsTitle: "Actividades en el Sáhara", actsText: "Quads, buggies, 4x4, motos, dromedarios y encuentros auténticos: todo privado y organizado por nuestro propio equipo local.",
     expKicker: "Experiencias en el desierto", expTitle: "Nuestras estancias exclusivas", expText: "Cada estancia es a medida. Dinos tus fechas y preparamos tu experiencia perfecta en el desierto.",
     whyTitle: "Por qué Morocco Luxury Tents",
     why: [["Equipo bereber local", "Nacimos en Merzouga. Conocemos cada duna, cada familia y cada secreto del desierto."], ["Privado y exclusivo", "Actividades privadas, campamento pequeño y atención personal: nunca turismo de masas."], ["La seguridad primero", "Vehículos modernos, cascos, guías expertos y asistencia 24/7."], ["A medida", "Pedidas de mano, lunas de miel, familias, fotógrafos, grupos: lo adaptamos todo."]],
     faqTitle: "Preguntas frecuentes",
-    faq: [["¿Cómo llego al campamento?", "Te recogemos en el pueblo de Merzouga y te llevamos al campamento en 4x4 o en dromedario. También organizamos traslados privados desde Marrakech, Fez, el aeropuerto de Errachidia o cualquier ciudad de Marruecos."], ["¿Cuál es la mejor época para ir?", "De octubre a mayo el clima es perfecto. En verano hace calor de día pero las noches son maravillosas, y es la temporada del baño de arena tradicional."], ["¿Puedo reservar solo actividades sin dormir en el campamento?", "Sí. Todas nuestras actividades —quads, buggies, 4x4, motos, dromedarios— se pueden reservar por separado."], ["¿Cuáles son vuestros precios?", "Cada estancia es privada y a medida, por eso preparamos un presupuesto personalizado. Escríbenos por WhatsApp y te respondemos enseguida."]],
+    faq: [["¿Cómo llego al campamento?", "Te recogemos en el pueblo de Merzouga y te llevamos al campamento en 4x4 o en dromedario. También organizamos traslados privados desde los aeropuertos de Errachidia, Ouarzazate, Marrakech, Fez, Casablanca y cualquier ciudad de Marruecos."], ["¿Cuál es la mejor época para ir?", "De octubre a mayo el clima es perfecto. En verano hace calor de día pero las noches son maravillosas, y es la temporada del baño de arena tradicional."], ["¿Puedo reservar solo actividades sin dormir en el campamento?", "Sí. Todas nuestras actividades —quads, buggies, 4x4, motos, dromedarios— se pueden reservar por separado."], ["¿Cuáles son vuestros precios?", "Cada estancia es privada y a medida, por eso preparamos un presupuesto personalizado. Escríbenos por WhatsApp y te respondemos enseguida."]],
     ctaTitle: "Tu noche en el Sáhara empieza aquí", ctaText: "Escríbenos por WhatsApp o envía tu solicitud: nuestro equipo responde rápido.",
     duration: "Duración", level: "Nivel", highlights: "Lo más destacado", related: "Más actividades",
     actCta: "Reservar esta actividad", actCtaText: "Actividad privada, precio bajo petición. Dinos tu fecha y el número de personas.",
@@ -90,8 +90,8 @@ const T = {
 
 // rutas por idioma
 const R = {
-  en: { home: "/", camp: "/luxury-camp/", acts: "/activities/", act: s => `/activities/${s}/`, contact: "/contact/", blog: "/blog/", post: p => `/blog/${p.slug}/` },
-  es: { home: "/es/", camp: "/es/campamento/", acts: "/es/actividades/", act: s => `/es/actividades/${s}/`, contact: "/es/contacto/", blog: "/es/blog/", post: p => `/es/blog/${p.slugEs}/` },
+  en: { home: "/", camp: "/luxury-camp/", acts: "/activities/", act: s => `/activities/${s}/`, contact: "/contact/", transfers: "/airport-transfers/", blog: "/blog/", post: p => `/blog/${p.slug}/` },
+  es: { home: "/es/", camp: "/es/campamento/", acts: "/es/actividades/", act: s => `/es/actividades/${s}/`, contact: "/es/contacto/", transfers: "/es/traslados/", blog: "/es/blog/", post: p => `/es/blog/${p.slugEs}/` },
 };
 
 // ---------- utilidades ----------
@@ -197,6 +197,7 @@ ${body}
         <li><a href="${wa(lang)}" target="_blank" rel="noopener">WhatsApp ${config.whatsappDisplay}</a></li>
         <li><a href="mailto:${config.email}">${config.email}</a></li>
         <li>${config.address}</li>
+        <li><a href="${r.transfers}">${transfers[lang].title}</a></li>
       </ul>
     </div>
   </div>
@@ -230,6 +231,26 @@ const postCard = (p, lang) => `<a class="act-card reveal" href="${R[lang].post(p
   <div class="act-img">${img(p.photo, p[lang].title, 800)}</div>
   <div class="act-body"><h3>${p[lang].title}</h3><p>${p[lang].intro}</p><span class="meta">${T[lang].readMore} →</span></div>
 </a>`;
+
+const transferBlock = (lang, full) => {
+  const x = transfers[lang];
+  return `<section class="section dark">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">${x.kicker}</p>
+      <h2>${x.title}</h2>
+      <p>${x.text}</p>
+      <ul class="amen one">${x.points.map(p => `<li>${icon("check", 18)} ${p}</li>`).join("")}</ul>
+      ${full ? "" : `<a class="btn btn-gold" href="${R[lang].transfers}">${T[lang].discover}</a>`}
+    </div>
+    <div class="reveal">
+      <h3 class="air-title">${x.airportsTitle}</h3>
+      <table class="air"><tbody>${transfers.airports.map(([a, t]) => `<tr><td>${icon("jeep", 18)} ${a}</td><td>${t}</td></tr>`).join("")}</tbody></table>
+      <p class="air-note">${x.timeLabel}. ${x.note}</p>
+    </div>
+  </div>
+</section>`;
+};
 
 const cta = (lang) => {
   const t = T[lang];
@@ -333,6 +354,8 @@ for (const lang of ["en", "es"]) {
   </div>
 </section>
 
+${transferBlock(lang, false)}
+
 <section class="section sand">
   <div class="wrap">
     <div class="head reveal"><h2>${t.whyTitle}</h2></div>
@@ -424,6 +447,15 @@ ${cta(lang)}`,
 ${cta(lang)}`,
     }));
   });
+
+  // TRANSFERS
+  add(r.transfers, layout({
+    lang, title: `${transfers[lang].title} | ${config.brand}`, desc: transfers[lang].text.slice(0, 158), pathname: r.transfers, alt: o.transfers, ogImage: "transfer",
+    schema: [{ "@context": "https://schema.org", "@type": "Service", serviceType: "Airport transfer", name: transfers[lang].title, description: transfers[lang].text, areaServed: "Morocco", provider: { "@type": "Organization", name: config.brand, url: config.domain } }],
+    body: `${pageHero("transfer", transfers[lang].kicker, transfers[lang].title, transfers[lang].text)}
+${transferBlock(lang, true)}
+${cta(lang)}`,
+  }));
 
   // BLOG
   add(r.blog, layout({

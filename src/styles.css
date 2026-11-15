@@ -233,3 +233,13 @@ p+p{margin-top:1em}
 .post-cta h3{color:var(--sand);font-size:1.9rem}
 .post-cta .btn{margin-top:1.2rem;color:var(--ink)}
 .post-cta a.btn{text-decoration:none}
+
+/* transfers */
+.amen.one{grid-template-columns:1fr;margin:1.6rem 0 2rem;gap:.8rem}
+.air-title{color:var(--sand);margin-bottom:1rem}
+.air{width:100%;border-collapse:collapse}
+.air td{padding:.85rem .2rem;border-bottom:1px solid rgba(245,237,225,.12);color:var(--sand)}
+.air td:first-child{display:flex;gap:.7rem;align-items:center}
+.air td:first-child .ico{color:var(--gold)}
+.air td:last-child{text-align:right;color:var(--gold);white-space:nowrap}
+.air-note{font-size:.85rem;margin-top:1rem;opacity:.75}

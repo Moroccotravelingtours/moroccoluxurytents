@@ -28,11 +28,20 @@ export const photos = {
   quad2:     { file: "quad-2.jpg",    unsplash: "Sbt5ZEVPFFg" },
   jeep:      { file: "4x4.jpg",       unsplash: "cqY3LKBqidM" },
   moto:      { file: "motorbike.jpg", unsplash: "WZPjP5QO8js" },
+  moto2:     { file: "motorbike-2.jpg", unsplash: "QXlggc7lO8c" },
+  buggy:     { file: "buggy.jpg",     unsplash: "vwEzotHfXZc" },
+  sandboard: { file: "sandboarding.jpg", unsplash: "qcRQ2Ehx6Q8" },
+  stars:     { file: "stars.jpg",     unsplash: "ogMsEsdsOXA" },
+  stars2:    { file: "stars-2.jpg",   unsplash: "XaidrBZfEwU" },
+  souk:      { file: "souk.jpg",      unsplash: "l50OANxqQXE" },
+  spices:    { file: "spices.jpg",    unsplash: "tDKIGOPfB-0" },
+  transfer:  { file: "transfer.jpg",  unsplash: "cqY3LKBqidM" },
+  restaurant:{ file: "restaurant.jpg", unsplash: "XaidrBZfEwU" },
   // Fotos del campamento: ¡pon aquí fotos REALES de tus jaimas!
   tent1:     { file: "tent-luxury.jpg",  unsplash: "yWbxfKurMH0" },
   tent2:     { file: "tent-royal.jpg",   unsplash: "sMV0Rv4UKKY" },
   tent3:     { file: "tent-family.jpg",  unsplash: "FVv0P5O6PC0" },
-  dinner:    { file: "dinner.jpg",       unsplash: "NhlKx6Uvm3E" },
+  dinner:    { file: "dinner.jpg",       unsplash: "XaidrBZfEwU" },
 };
 
 // ============================================================
@@ -69,7 +78,7 @@ export const activities = [
   },
   {
     slug: "buggy-merzouga",
-    photo: "quad2",
+    photo: "buggy",
     icon: "buggy",
     featured: true,
     en: {
@@ -125,7 +134,7 @@ export const activities = [
   },
   {
     slug: "enduro-motorbike-merzouga",
-    photo: "moto",
+    photo: "moto2",
     icon: "moto",
     featured: true,
     en: {
@@ -181,7 +190,7 @@ export const activities = [
   },
   {
     slug: "sandboarding-merzouga",
-    photo: "dunes2",
+    photo: "sandboard",
     icon: "board",
     en: {
       name: "Sandboarding on the Great Dunes",
@@ -208,7 +217,7 @@ export const activities = [
   },
   {
     slug: "stargazing-sahara",
-    photo: "camel4",
+    photo: "stars",
     icon: "star",
     en: {
       name: "Stargazing Night in the Sahara",
@@ -262,7 +271,7 @@ export const activities = [
   },
   {
     slug: "gnawa-music-khamlia",
-    photo: "camel5",
+    photo: "stars2",
     icon: "music",
     en: {
       name: "Gnawa Music in Khamlia Village",
@@ -370,7 +379,7 @@ export const activities = [
   },
   {
     slug: "rissani-market-tour",
-    photo: "camel2",
+    photo: "souk",
     icon: "market",
     en: {
       name: "Rissani Souk & Ksar Tour",
@@ -465,3 +474,37 @@ export const packages = [
     es: { name: "Sáhara romántico — luna de miel", items: ["Suite real", "Cena privada en las dunas", "Dromedario al amanecer para dos", "Flores, tarta y fotógrafo"] },
   },
 ];
+
+// ============================================================
+//  TRASLADOS
+// ============================================================
+export const transfers = {
+  airports: [
+    ["Errachidia (Moulay Ali Cherif)", "≈ 2 h"],
+    ["Ouarzazate", "≈ 5 h"],
+    ["Marrakech (Menara)", "≈ 9–10 h"],
+    ["Fes (Saïss)", "≈ 7–8 h"],
+    ["Casablanca (Mohammed V)", "≈ 10–11 h"],
+    ["Agadir (Al Massira)", "≈ 10 h"],
+    ["Tangier (Ibn Battouta)", "≈ 11–12 h"],
+    ["Rabat (Salé)", "≈ 9–10 h"],
+  ],
+  en: {
+    kicker: "Private transfers",
+    title: "Airport & city transfers to Merzouga",
+    text: "We organise private transfers to our camp from every airport and city in Morocco — with a professional driver, a comfortable air-conditioned vehicle and stops wherever you want.",
+    points: ["Pick-up at the airport arrivals hall", "Modern air-conditioned vehicle (4x4 or minivan)", "Professional English- or Spanish-speaking driver", "Stops for photos, lunch and sightseeing on the way", "Multi-day routes via the Dades Valley, Todra Gorge or Ziz Valley", "Return transfer to any city or airport"],
+    airportsTitle: "Airports we serve",
+    timeLabel: "Driving time to Merzouga",
+    note: "Times are approximate. Long journeys can be split into a 2- or 3-day private tour with a night on the way.",
+  },
+  es: {
+    kicker: "Traslados privados",
+    title: "Traslados desde aeropuertos y ciudades a Merzouga",
+    text: "Organizamos traslados privados a nuestro campamento desde todos los aeropuertos y ciudades de Marruecos, con conductor profesional, vehículo cómodo con aire acondicionado y paradas donde tú quieras.",
+    points: ["Recogida en la sala de llegadas del aeropuerto", "Vehículo moderno con aire acondicionado (4x4 o minivan)", "Conductor profesional que habla español o inglés", "Paradas para fotos, comer y visitar por el camino", "Rutas de varios días por el valle del Dadès, las gargantas del Todra o el valle del Ziz", "Traslado de vuelta a cualquier ciudad o aeropuerto"],
+    airportsTitle: "Aeropuertos que cubrimos",
+    timeLabel: "Tiempo en coche hasta Merzouga",
+    note: "Tiempos aproximados. Los trayectos largos se pueden dividir en un tour privado de 2 o 3 días con noche en el camino.",
+  },
+};
