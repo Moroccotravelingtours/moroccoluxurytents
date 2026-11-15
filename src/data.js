@@ -462,7 +462,7 @@ export const tents = [
 ];
 
 // Galería del campamento (fotos reales)
-export const gallery = ["tent-suite.jpg", "tent-suite-3.jpg", "tent-bathroom-view.jpg", "tent-suite-4.jpg", "tent-family.jpg", "tent-beds-ac.jpg", "bath-shower.jpg", "restaurant.jpg", "bath-double-sink.jpg", "tent-group.jpg", "restaurant-2.jpg", "bath-sink-onyx.jpg", "bathroom-3.jpg", "tent-bed-ac.jpg", "bath-toiletries.jpg", "tent-blankets.jpg", "restaurant-3.jpg", "tent-suite-2.jpg", "tent-suite-5.jpg", "4x4-2.jpg", "4x4-4.jpg"];
+export const gallery = ["tent-suite.jpg", "tent-suite-3.jpg", "tent-bathroom-view.jpg", "tent-suite-4.jpg", "tent-family.jpg", "tent-beds-ac.jpg", "bath-shower.jpg", "restaurant.jpg", "bath-double-sink.jpg", "tent-group.jpg", "restaurant-2.jpg", "bath-sink-onyx.jpg", "bathroom-3.jpg", "tent-bed-ac.jpg", "bath-toiletries.jpg", "tent-blankets.jpg", "restaurant-3.jpg", "tent-suite-2.jpg", "bath-sink-3.jpg", "tent-suite-5.jpg", "bath-amenities.jpg", "bath-sink-2.jpg", "bath-toilet.jpg", "4x4-2.jpg", "4x4-4.jpg"];
 
 // ============================================================
 //  EXPERIENCIAS (paquetes, sin precio)
