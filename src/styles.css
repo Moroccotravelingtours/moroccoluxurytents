@@ -250,3 +250,4 @@ p+p{margin-top:1em}
 .g-item img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
 .g-item:hover img{transform:scale(1.05)}
 @media (max-width:720px){.gallery{grid-template-columns:1fr 1fr;gap:.6rem}}
+.act-gal{grid-template-columns:1fr 1fr;margin-top:2.4rem}

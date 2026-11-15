@@ -450,6 +450,7 @@ ${cta(lang)}`,
       ${d.body.map(p => `<p>${p}</p>`).join("")}
       <h2>${t.highlights}</h2>
       <ul class="checks">${d.highlights.map(h => `<li>${icon("check", 18)} ${h}</li>`).join("")}</ul>
+      ${a.gallery ? `<div class="gallery act-gal">${a.gallery.map((f, i) => `<a class="g-item" href="/images/${f}" target="_blank" rel="noopener"><img src="/images/${f}" alt="${esc(d.name)} ${i + 1}" loading="lazy" decoding="async"></a>`).join("")}</div>` : ""}
     </div>
     <aside class="book-box reveal">
       <span class="act-icon big">${icon(a.icon, 30)}</span>
