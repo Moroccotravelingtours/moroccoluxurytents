@@ -42,6 +42,7 @@ export const photos = {
   tent1:     { file: "tent-luxury.jpg",  unsplash: "yWbxfKurMH0" },
   tent2:     { file: "tent-family-3.jpg", unsplash: "sMV0Rv4UKKY" },
   tent3:     { file: "tent-triple.jpg",  unsplash: "FVv0P5O6PC0" },
+  tent4:     { file: "tent-suite-6.jpg", unsplash: "sMV0Rv4UKKY" },
   dinner:    { file: "dinner.jpg",       unsplash: "XaidrBZfEwU" },
 };
 
@@ -439,6 +440,11 @@ export const activities = [
 // ============================================================
 export const tents = [
   {
+    photo: "tent4",
+    en: { name: "Desert Suite", text: "Our largest tent: a double bed and two single beds, a lounge with carved Berber chairs and leather poufs, a writing desk and a spacious private bathroom with shower and stone floor. Air-conditioned.", tags: ["Up to 4 guests", "Lounge & desk", "Air conditioning"] },
+    es: { name: "Suite del desierto", text: "Nuestra jaima más grande: cama doble y dos camas individuales, salón con sillas bereberes talladas y pufs de cuero, escritorio y un amplio baño privado con ducha y suelo de piedra. Con aire acondicionado.", tags: ["Hasta 4 personas", "Salón y escritorio", "Aire acondicionado"] },
+  },
+  {
     photo: "tent1",
     en: { name: "Luxury Tent", text: "Spacious Berber tent with a double bed and an extra bed, a lounge corner and a large private bathroom: rain shower, double washbasin, toilet and hair dryer. Air-conditioned for summer and winter.", tags: ["2–3 guests", "Private bathroom", "Air conditioning"] },
     es: { name: "Jaima de lujo", text: "Jaima bereber amplia con cama doble y cama adicional, rincón de salón y un gran baño privado: ducha de lluvia, doble lavabo, inodoro y secador de pelo. Con aire acondicionado para verano e invierno.", tags: ["2–3 personas", "Baño privado", "Aire acondicionado"] },
@@ -456,7 +462,7 @@ export const tents = [
 ];
 
 // Galería del campamento (fotos reales)
-export const gallery = ["tent-family.jpg", "tent-beds-ac.jpg", "bath-shower.jpg", "restaurant.jpg", "bath-double-sink.jpg", "tent-group.jpg", "restaurant-2.jpg", "bath-sink-onyx.jpg", "bathroom-3.jpg", "tent-bed-ac.jpg", "bath-toiletries.jpg", "tent-blankets.jpg", "restaurant-3.jpg", "4x4-2.jpg", "4x4-4.jpg"];
+export const gallery = ["tent-suite.jpg", "tent-suite-3.jpg", "tent-bathroom-view.jpg", "tent-suite-4.jpg", "tent-family.jpg", "tent-beds-ac.jpg", "bath-shower.jpg", "restaurant.jpg", "bath-double-sink.jpg", "tent-group.jpg", "restaurant-2.jpg", "bath-sink-onyx.jpg", "bathroom-3.jpg", "tent-bed-ac.jpg", "bath-toiletries.jpg", "tent-blankets.jpg", "restaurant-3.jpg", "tent-suite-2.jpg", "tent-suite-5.jpg", "4x4-2.jpg", "4x4-4.jpg"];
 
 // ============================================================
 //  EXPERIENCIAS (paquetes, sin precio)

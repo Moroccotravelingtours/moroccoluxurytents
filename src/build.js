@@ -352,7 +352,7 @@ for (const lang of ["en", "es"]) {
 <section class="section dark">
   <div class="wrap">
     <div class="head reveal"><p class="kicker">${t.nav.camp}</p><h2>${t.campTitle}</h2><p>${t.campText}</p></div>
-    <div class="grid-3">${tents.map(x => `<article class="tent reveal"><div class="tent-img">${img(x.photo, x[lang].name, 900)}</div><h3>${x[lang].name}</h3><p>${x[lang].text}</p><div class="tags">${x[lang].tags.map(g => `<span>${g}</span>`).join("")}</div></article>`).join("")}</div>
+    <div class="grid-3">${tents.slice(0, 3).map(x => `<article class="tent reveal"><div class="tent-img">${img(x.photo, x[lang].name, 900)}</div><h3>${x[lang].name}</h3><p>${x[lang].text}</p><div class="tags">${x[lang].tags.map(g => `<span>${g}</span>`).join("")}</div></article>`).join("")}</div>
     <div class="center"><a class="btn btn-ghost" href="${r.camp}">${t.discover}</a></div>
   </div>
 </section>
@@ -394,7 +394,7 @@ ${cta(lang)}`,
   // CAMP
   add(r.camp, layout({
     lang, title: t.campPageTitle, desc: t.campPageDesc, pathname: r.camp, alt: o.camp, schema: [businessSchema(lang)],
-    body: `${pageHero("tent1", t.heroKicker, t.campTitle, t.campText)}
+    body: `${pageHero("tent4", t.heroKicker, t.campTitle, t.campText)}
 <section class="section">
   <div class="wrap split">
     <div class="reveal"><p class="kicker kdark">${t.introKicker}</p><h2>${t.introTitle}</h2>${t.introText.map(p => `<p>${p}</p>`).join("")}</div>
