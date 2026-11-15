@@ -9,7 +9,7 @@ Web estática (HTML, sin WordPress), en inglés y español, preparada para Netli
 - Después de cambiar algo: `node src/build.js` (Netlify lo hace solo si usas GitHub)
 
 ## Fotos
-Copia tus fotos en `site/images/` con los nombres de `site/images/README.txt`.
+Sube tus fotos a la carpeta `images/` del repositorio de GitHub (botón "Add file > Upload files"), con los nombres de `images/LEEME.txt`. Netlify publica los cambios solo.
 Si una foto no existe, la web muestra una foto libre de Unsplash.
 IMPORTANTE: las jaimas (tent-luxury.jpg, tent-royal.jpg, tent-family.jpg, dinner.jpg) deben ser fotos REALES de tu campamento.
 

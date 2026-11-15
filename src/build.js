@@ -489,6 +489,8 @@ for (const [p, html] of pages) {
 }
 fs.copyFileSync(path.join(root, "src/styles.css"), path.join(out, "styles.css"));
 fs.mkdirSync(path.join(out, "images"), { recursive: true });
+const imgSrc = path.join(root, "images");
+if (fs.existsSync(imgSrc)) for (const f of fs.readdirSync(imgSrc)) fs.copyFileSync(path.join(imgSrc, f), path.join(out, "images", f));
 fs.writeFileSync(path.join(out, "images/README.txt"), "Pon aquí tus fotos con estos nombres (JPG, ~1600 px de ancho):\n" + Object.values(photos).map(p => "- " + p.file).join("\n") + "\nSi una foto no existe, la web usa una foto libre de Unsplash.\n");
 fs.writeFileSync(path.join(out, "favicon.svg"), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#1c140d"/><path d="M6 31 L20 9 L34 31 Z M20 9 V31 M14.5 31 L20 23 L25.5 31" fill="none" stroke="#c9a25a" stroke-width="2"/></svg>`);
 fs.writeFileSync(path.join(out, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${config.domain}/sitemap.xml\n`);

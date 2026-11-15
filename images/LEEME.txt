@@ -1,0 +1,3 @@
+Sube aquí tus fotos (JPG, ~1600 px) con estos nombres:
+hero.jpg, dunes.jpg, dunes-2.jpg, camel.jpg, camel-2.jpg, camel-3.jpg, camel-4.jpg, camel-5.jpg, quad.jpg, quad-2.jpg, 4x4.jpg, motorbike.jpg, tent-luxury.jpg, tent-royal.jpg, tent-family.jpg, dinner.jpg
+Si falta una, la web usa una foto libre de Unsplash.
