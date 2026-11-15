@@ -37,10 +37,11 @@ export const photos = {
   spices:    { file: "spices.jpg",    unsplash: "tDKIGOPfB-0" },
   transfer:  { file: "transfer.jpg",  unsplash: "cqY3LKBqidM" },
   restaurant:{ file: "restaurant.jpg", unsplash: "XaidrBZfEwU" },
-  // Fotos del campamento: ¡pon aquí fotos REALES de tus jaimas!
+  restaurant2:{ file: "restaurant-2.jpg", unsplash: "XaidrBZfEwU" },
+  // Fotos del campamento (fotos reales)
   tent1:     { file: "tent-luxury.jpg",  unsplash: "yWbxfKurMH0" },
-  tent2:     { file: "tent-royal.jpg",   unsplash: "sMV0Rv4UKKY" },
-  tent3:     { file: "tent-family.jpg",  unsplash: "FVv0P5O6PC0" },
+  tent2:     { file: "tent-family-3.jpg", unsplash: "sMV0Rv4UKKY" },
+  tent3:     { file: "tent-triple.jpg",  unsplash: "FVv0P5O6PC0" },
   dinner:    { file: "dinner.jpg",       unsplash: "XaidrBZfEwU" },
 };
 
@@ -439,20 +440,23 @@ export const activities = [
 export const tents = [
   {
     photo: "tent1",
-    en: { name: "Luxury Tent", text: "Spacious tent with king-size or twin beds, private bathroom with hot shower, Berber carpets and a private terrace facing the dunes.", tags: ["2 guests", "Private bathroom", "Dune view"] },
-    es: { name: "Jaima de lujo", text: "Jaima amplia con cama king-size o dos camas, baño privado con ducha caliente, alfombras bereberes y terraza privada frente a las dunas.", tags: ["2 personas", "Baño privado", "Vista a las dunas"] },
+    en: { name: "Luxury Tent", text: "Spacious Berber tent with a double bed and an extra bed, a lounge corner and a large private bathroom: rain shower, double washbasin, toilet and hair dryer. Air-conditioned for summer and winter.", tags: ["2–3 guests", "Private bathroom", "Air conditioning"] },
+    es: { name: "Jaima de lujo", text: "Jaima bereber amplia con cama doble y cama adicional, rincón de salón y un gran baño privado: ducha de lluvia, doble lavabo, inodoro y secador de pelo. Con aire acondicionado para verano e invierno.", tags: ["2–3 personas", "Baño privado", "Aire acondicionado"] },
   },
   {
     photo: "tent2",
-    en: { name: "Royal Suite", text: "Our most exclusive suite: lounge area, premium bedding, large bathroom and a private terrace — the perfect honeymoon hideaway.", tags: ["2 guests", "Lounge", "Honeymoon"] },
-    es: { name: "Suite real", text: "Nuestra suite más exclusiva: salón, ropa de cama premium, baño grande y terraza privada; el refugio perfecto para una luna de miel.", tags: ["2 personas", "Salón", "Luna de miel"] },
+    en: { name: "Family Tent", text: "A warm tent with a double bed and a single bed, handmade wooden headboards, Berber textiles and its own bathroom. Perfect for families or friends travelling together.", tags: ["Up to 3–4 guests", "Private bathroom", "Families"] },
+    es: { name: "Jaima familiar", text: "Una jaima acogedora con cama doble y cama individual, cabeceros de madera artesanales, textiles bereberes y baño propio. Perfecta para familias o amigos que viajan juntos.", tags: ["Hasta 3–4 personas", "Baño privado", "Familias"] },
   },
   {
     photo: "tent3",
-    en: { name: "Family Tent", text: "Large tent for families or friends, with a double bed and extra beds, private bathroom and plenty of space for children.", tags: ["Up to 5 guests", "Private bathroom", "Families"] },
-    es: { name: "Jaima familiar", text: "Jaima grande para familias o amigos, con cama doble y camas adicionales, baño privado y mucho espacio para los niños.", tags: ["Hasta 5 personas", "Baño privado", "Familias"] },
+    en: { name: "Triple Tent", text: "Three comfortable single beds, Moroccan rugs, a private washbasin area and bathroom. Ideal for friends, small groups or children travelling with parents.", tags: ["3 guests", "Single beds", "Private bathroom"] },
+    es: { name: "Jaima triple", text: "Tres cómodas camas individuales, alfombras marroquíes, zona de lavabo y baño privado. Ideal para amigos, grupos pequeños o niños que viajan con sus padres.", tags: ["3 personas", "Camas individuales", "Baño privado"] },
   },
 ];
+
+// Galería del campamento (fotos reales)
+export const gallery = ["tent-family.jpg", "tent-beds-ac.jpg", "bath-shower.jpg", "restaurant.jpg", "bath-double-sink.jpg", "tent-group.jpg", "restaurant-2.jpg", "bath-sink-onyx.jpg", "bathroom-3.jpg", "tent-bed-ac.jpg", "bath-toiletries.jpg", "tent-blankets.jpg", "restaurant-3.jpg", "4x4-2.jpg", "4x4-4.jpg"];
 
 // ============================================================
 //  EXPERIENCIAS (paquetes, sin precio)
@@ -470,8 +474,8 @@ export const packages = [
   },
   {
     photo: "dinner",
-    en: { name: "Romantic Sahara — Honeymoon", items: ["Royal Suite", "Private dinner in the dunes", "Sunrise camel trek for two", "Flowers, cake & photographer"] },
-    es: { name: "Sáhara romántico — luna de miel", items: ["Suite real", "Cena privada en las dunas", "Dromedario al amanecer para dos", "Flores, tarta y fotógrafo"] },
+    en: { name: "Romantic Sahara — Honeymoon", items: ["Luxury tent with private bathroom", "Private dinner in the dunes", "Sunrise camel trek for two", "Flowers, cake & photographer"] },
+    es: { name: "Sáhara romántico — luna de miel", items: ["Jaima de lujo con baño privado", "Cena privada en las dunas", "Dromedario al amanecer para dos", "Flores, tarta y fotógrafo"] },
   },
 ];
 

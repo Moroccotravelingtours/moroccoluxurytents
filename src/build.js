@@ -2,7 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { config, photos, activities, tents, packages, transfers } from "./data.js";
+import { config, photos, activities, tents, packages, transfers, gallery } from "./data.js";
 import { posts } from "./blog.js";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -21,11 +21,11 @@ const T = {
     heroText: "Private luxury tents in the heart of the Erg Chebbi dunes, with quads, buggies, 4x4 tours, camels and unforgettable nights in the Moroccan desert.",
     introKicker: "Welcome to the Sahara",
     introTitle: "A luxury camp in the golden dunes of Merzouga",
-    introText: ["Morocco Luxury Tents is a boutique desert camp set among the highest dunes of Erg Chebbi, the most beautiful sand sea of Morocco. Here, the silence of the Sahara meets the comfort of a five-star hotel.", "Every tent has its own private bathroom, real beds and a terrace facing the dunes. Our local Berber team, born in Merzouga, takes care of every detail: from the camel trek at sunset to the dinner by the fire and the most thrilling adventures in the desert."],
+    introText: ["Morocco Luxury Tents is a boutique desert camp set among the highest dunes of Erg Chebbi, the most beautiful sand sea of Morocco. Here, the silence of the Sahara meets the comfort of a five-star hotel.", "Every tent has its own private bathroom with rain shower, real beds and air conditioning. Our local Berber team, born in Merzouga, takes care of every detail: from the camel trek at sunset to the dinner by the fire and the most thrilling adventures in the desert."],
     stats: [["150 m", "high dunes of Erg Chebbi"], ["15+", "desert activities"], ["100%", "private & tailor-made"], ["24/7", "local team on site"]],
     campTitle: "Our luxury tents", campText: "Comfort of a hotel, soul of the desert.",
     amenTitle: "Included in your stay",
-    amen: ["Private bathroom & hot shower", "King-size beds & premium linen", "Dinner & breakfast", "Berber music by the fire", "Free Wi-Fi in the lounge", "Pick-up in Merzouga village"],
+    amen: ["Private bathroom with rain shower", "Air conditioning in every tent", "Double washbasin, hair dryer & toiletries", "Comfortable beds & quality linen", "Dinner & breakfast in our restaurant tent", "Berber music by the fire", "Towels & warm blankets", "Pick-up in Merzouga village"],
     actsKicker: "Adventure & culture", actsTitle: "Activities in the Sahara", actsText: "Quads, buggies, 4x4, motorbikes, camels and authentic encounters — all private and organised by our own local team.",
     expKicker: "Desert experiences", expTitle: "Our signature stays", expText: "Every stay is tailor-made. Tell us your dates and we prepare your perfect desert experience.",
     whyTitle: "Why Morocco Luxury Tents",
@@ -33,6 +33,7 @@ const T = {
     faqTitle: "Frequently asked questions",
     faq: [["How do I get to the camp?", "We pick you up in Merzouga village and take you to the camp by 4x4 or on a camel. We also organise private transfers from the airports of Errachidia, Ouarzazate, Marrakech, Fes, Casablanca and any city in Morocco."], ["When is the best time to visit?", "From October to May the weather is perfect. Summer is hot during the day but the nights are wonderful, and it is the season of the traditional sand bath."], ["Can I book only activities without sleeping at the camp?", "Yes. All our activities — quads, buggies, 4x4, motorbikes, camels — can be booked separately."], ["What are your prices?", "Every stay is private and tailor-made, so we prepare a personalised quote. Write to us on WhatsApp and you will receive an answer quickly."]],
     ctaTitle: "Your night in the Sahara starts here", ctaText: "Write to us on WhatsApp or send your request — our team answers quickly.",
+    galTitle: "Inside our camp", galText: "Real photos of our tents, bathrooms and restaurant.", restTitle: "Our restaurant tent", restText: "Dinner and breakfast are served in our air-conditioned restaurant tent, decorated with hand-carved Berber furniture and windows facing the dunes. Moroccan cuisine prepared every day by our local cooks: harira, tagines, couscous, salads, fruit and mint tea.",
     duration: "Duration", level: "Level", highlights: "Highlights", related: "More activities",
     actCta: "Book this activity", actCtaText: "Private activity — price on request. Tell us your date and number of people.",
     contactTitle: "Contact & booking", contactText: "Tell us your dates, the number of guests and the activities you like. We will send you a personalised proposal.",
@@ -58,11 +59,11 @@ const T = {
     heroText: "Jaimas privadas de lujo en el corazón de las dunas de Erg Chebbi, con quads, buggies, tours en 4x4, dromedarios y noches inolvidables en el desierto de Marruecos.",
     introKicker: "Bienvenidos al Sáhara",
     introTitle: "Un campamento de lujo en las dunas doradas de Merzouga",
-    introText: ["Morocco Luxury Tents es un campamento boutique situado entre las dunas más altas de Erg Chebbi, el mar de arena más bonito de Marruecos. Aquí, el silencio del Sáhara se une a la comodidad de un hotel de cinco estrellas.", "Cada jaima tiene su propio baño privado, camas de verdad y una terraza frente a las dunas. Nuestro equipo bereber, nacido en Merzouga, cuida cada detalle: desde el paseo en dromedario al atardecer hasta la cena junto al fuego y las aventuras más emocionantes del desierto."],
+    introText: ["Morocco Luxury Tents es un campamento boutique situado entre las dunas más altas de Erg Chebbi, el mar de arena más bonito de Marruecos. Aquí, el silencio del Sáhara se une a la comodidad de un hotel de cinco estrellas.", "Cada jaima tiene su propio baño privado con ducha de lluvia, camas de verdad y aire acondicionado. Nuestro equipo bereber, nacido en Merzouga, cuida cada detalle: desde el paseo en dromedario al atardecer hasta la cena junto al fuego y las aventuras más emocionantes del desierto."],
     stats: [["150 m", "de altura en las dunas de Erg Chebbi"], ["15+", "actividades en el desierto"], ["100%", "privado y a medida"], ["24/7", "equipo local en el campamento"]],
     campTitle: "Nuestras jaimas de lujo", campText: "La comodidad de un hotel, el alma del desierto.",
     amenTitle: "Incluido en tu estancia",
-    amen: ["Baño privado y ducha caliente", "Camas king-size y ropa de cama premium", "Cena y desayuno", "Música bereber junto al fuego", "Wi-Fi gratis en el salón", "Recogida en el pueblo de Merzouga"],
+    amen: ["Baño privado con ducha de lluvia", "Aire acondicionado en cada jaima", "Doble lavabo, secador y productos de baño", "Camas cómodas y ropa de cama de calidad", "Cena y desayuno en nuestra jaima restaurante", "Música bereber junto al fuego", "Toallas y mantas calientes", "Recogida en el pueblo de Merzouga"],
     actsKicker: "Aventura y cultura", actsTitle: "Actividades en el Sáhara", actsText: "Quads, buggies, 4x4, motos, dromedarios y encuentros auténticos: todo privado y organizado por nuestro propio equipo local.",
     expKicker: "Experiencias en el desierto", expTitle: "Nuestras estancias exclusivas", expText: "Cada estancia es a medida. Dinos tus fechas y preparamos tu experiencia perfecta en el desierto.",
     whyTitle: "Por qué Morocco Luxury Tents",
@@ -70,6 +71,7 @@ const T = {
     faqTitle: "Preguntas frecuentes",
     faq: [["¿Cómo llego al campamento?", "Te recogemos en el pueblo de Merzouga y te llevamos al campamento en 4x4 o en dromedario. También organizamos traslados privados desde los aeropuertos de Errachidia, Ouarzazate, Marrakech, Fez, Casablanca y cualquier ciudad de Marruecos."], ["¿Cuál es la mejor época para ir?", "De octubre a mayo el clima es perfecto. En verano hace calor de día pero las noches son maravillosas, y es la temporada del baño de arena tradicional."], ["¿Puedo reservar solo actividades sin dormir en el campamento?", "Sí. Todas nuestras actividades —quads, buggies, 4x4, motos, dromedarios— se pueden reservar por separado."], ["¿Cuáles son vuestros precios?", "Cada estancia es privada y a medida, por eso preparamos un presupuesto personalizado. Escríbenos por WhatsApp y te respondemos enseguida."]],
     ctaTitle: "Tu noche en el Sáhara empieza aquí", ctaText: "Escríbenos por WhatsApp o envía tu solicitud: nuestro equipo responde rápido.",
+    galTitle: "Dentro de nuestro campamento", galText: "Fotos reales de nuestras jaimas, baños y restaurante.", restTitle: "Nuestra jaima restaurante", restText: "La cena y el desayuno se sirven en nuestra jaima restaurante con aire acondicionado, decorada con muebles bereberes tallados a mano y ventanas frente a las dunas. Cocina marroquí preparada cada día por nuestros cocineros locales: harira, tajines, cuscús, ensaladas, fruta y té a la menta.",
     duration: "Duración", level: "Nivel", highlights: "Lo más destacado", related: "Más actividades",
     actCta: "Reservar esta actividad", actCtaText: "Actividad privada, precio bajo petición. Dinos tu fecha y el número de personas.",
     contactTitle: "Contacto y reservas", contactText: "Dinos tus fechas, el número de personas y las actividades que te gustan. Te enviaremos una propuesta personalizada.",
@@ -232,6 +234,14 @@ const postCard = (p, lang) => `<a class="act-card reveal" href="${R[lang].post(p
   <div class="act-body"><h3>${p[lang].title}</h3><p>${p[lang].intro}</p><span class="meta">${T[lang].readMore} →</span></div>
 </a>`;
 
+const galleryBlock = (lang, n) => `<section class="section">
+  <div class="wrap">
+    <div class="head reveal"><p class="kicker kdark">${T[lang].nav.camp}</p><h2>${T[lang].galTitle}</h2><p>${T[lang].galText}</p></div>
+    <div class="gallery">${gallery.slice(0, n).map((f, i) => `<a class="g-item reveal" href="/images/${f}" target="_blank" rel="noopener"><img src="/images/${f}" alt="${esc(T[lang].galTitle)} ${i + 1}" loading="lazy" decoding="async"></a>`).join("")}</div>
+    ${n < gallery.length ? `<div class="center"><a class="btn btn-dark" href="${R[lang].camp}#gallery">${T[lang].discover}</a></div>` : ""}
+  </div>
+</section>`;
+
 const transferBlock = (lang, full) => {
   const x = transfers[lang];
   return `<section class="section dark">
@@ -346,6 +356,7 @@ for (const lang of ["en", "es"]) {
     <div class="center"><a class="btn btn-ghost" href="${r.camp}">${t.discover}</a></div>
   </div>
 </section>
+${galleryBlock(lang, 6)}
 
 <section class="section" id="experiences">
   <div class="wrap">
@@ -383,11 +394,11 @@ ${cta(lang)}`,
   // CAMP
   add(r.camp, layout({
     lang, title: t.campPageTitle, desc: t.campPageDesc, pathname: r.camp, alt: o.camp, schema: [businessSchema(lang)],
-    body: `${pageHero("dunes", t.heroKicker, t.campTitle, t.campText)}
+    body: `${pageHero("tent1", t.heroKicker, t.campTitle, t.campText)}
 <section class="section">
   <div class="wrap split">
     <div class="reveal"><p class="kicker kdark">${t.introKicker}</p><h2>${t.introTitle}</h2>${t.introText.map(p => `<p>${p}</p>`).join("")}</div>
-    <div class="split-img reveal">${img("dunes2", t.introTitle, 1200)}</div>
+    <div class="split-img reveal">${img("tent2", t.introTitle, 1200)}</div>
   </div>
 </section>
 <section class="section sand">
@@ -395,6 +406,14 @@ ${cta(lang)}`,
     ${tents.map((x, i) => `<article class="tent-row reveal${i % 2 ? " rev" : ""}"><div class="tent-row-img">${img(x.photo, x[lang].name, 1200)}</div><div class="tent-row-body"><h2>${x[lang].name}</h2><p>${x[lang].text}</p><div class="tags">${x[lang].tags.map(g => `<span>${g}</span>`).join("")}</div><a class="btn btn-dark btn-sm" href="${wa(lang, (lang === "es" ? "Hola, me interesa: " : "Hello, I am interested in: ") + x[lang].name)}" target="_blank" rel="noopener">${t.enquire}</a></div></article>`).join("")}
   </div>
 </section>
+<section class="section">
+  <div class="wrap split">
+    <div class="split-img reveal">${img("restaurant", t.restTitle, 1200)}</div>
+    <div class="reveal"><h2>${t.restTitle}</h2><p>${t.restText}</p></div>
+  </div>
+</section>
+<div id="gallery"></div>
+${galleryBlock(lang, gallery.length)}
 <section class="section dark">
   <div class="wrap">
     <div class="head reveal"><h2>${t.amenTitle}</h2></div>
