@@ -128,6 +128,25 @@ const ICONS = {
 };
 const icon = (n, s = 24) => `<svg class="ico" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
 
+// ---------- Google Analytics 4 / Google Ads / Meta Pixel ----------
+// IDs: tracking.config.json or Netlify env vars (env wins). With no IDs nothing loads. Logic: src/tracking.js
+const trackFile = JSON.parse(fs.readFileSync(path.join(root, "tracking.config.json"), "utf8"));
+const tenv = (k, v) => (process.env[k] || v || "").trim();
+const TRACKING = {
+  ga4: tenv("NEXT_PUBLIC_GA4_ID", trackFile.ga4),
+  googleAds: tenv("NEXT_PUBLIC_GOOGLE_ADS_ID", trackFile.googleAds),
+  adsLeadLabel: tenv("NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL", trackFile.adsLeadLabel),
+  adsWhatsappLabel: tenv("NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL", trackFile.adsWhatsappLabel),
+  adsContactLabel: tenv("NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL", trackFile.adsContactLabel),
+  metaPixel: tenv("NEXT_PUBLIC_META_PIXEL_ID", trackFile.metaPixel),
+  privacyUrl: "",
+};
+const trackingOn = !!(TRACKING.ga4 || TRACKING.googleAds || TRACKING.metaPixel);
+const trackingTags = trackingOn
+  ? `<script>window.TRACKING_CONFIG=${JSON.stringify(TRACKING).replace(/</g, "\\u003c")};</script>\n<script src="/tracking.js" defer></script>\n` +
+    `<script>if(location.search.indexOf('sent=1')>-1){addEventListener('load',function(){window.cmTrack&&window.cmTrack('lead',{form:'booking'})})}</script>`
+  : "";
+
 // ---------- layout ----------
 function layout({ lang, title, desc, pathname, alt, body, schema, ogImage = "hero" }) {
   const t = T[lang], r = R[lang];
@@ -159,6 +178,7 @@ function layout({ lang, title, desc, pathname, alt, body, schema, ogImage = "her
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 ${(schema || []).map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join("\n")}
+${trackingTags}
 </head>
 <body>
 <header class="site-header" id="top">
@@ -540,6 +560,7 @@ for (const [p, html] of pages) {
   fs.writeFileSync(file, html);
 }
 fs.copyFileSync(path.join(root, "src/styles.css"), path.join(out, "styles.css"));
+fs.copyFileSync(path.join(root, "src/tracking.js"), path.join(out, "tracking.js"));
 fs.mkdirSync(path.join(out, "images"), { recursive: true });
 const imgSrc = path.join(root, "images");
 if (fs.existsSync(imgSrc)) for (const f of fs.readdirSync(imgSrc)) fs.copyFileSync(path.join(imgSrc, f), path.join(out, "images", f));
