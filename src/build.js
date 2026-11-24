@@ -4,6 +4,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { config, photos, activities, tents, packages, transfers, gallery } from "./data.js";
 import { posts } from "./blog.js";
+import { privacyText } from "./privacy-text.js";
+const privacyPath = (lang) => (lang === "es" ? "/es/privacidad/" : "/privacy/");
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const out = path.join(root, "site");
@@ -142,8 +144,8 @@ const TRACKING = {
   privacyUrl: "",
 };
 const trackingOn = !!(TRACKING.ga4 || TRACKING.googleAds || TRACKING.metaPixel);
-const trackingTags = trackingOn
-  ? `<script>window.TRACKING_CONFIG=${JSON.stringify(TRACKING).replace(/</g, "\\u003c")};</script>\n<script src="/tracking.js" defer></script>\n` +
+const trackingTags = (lang) => trackingOn
+  ? `<script>window.TRACKING_CONFIG=${JSON.stringify({ ...TRACKING, privacyUrl: privacyPath(lang) }).replace(/</g, "\\u003c")};</script>\n<script src="/tracking.js" defer></script>\n` +
     `<script>if(location.search.indexOf('sent=1')>-1){addEventListener('load',function(){window.cmTrack&&window.cmTrack('lead',{form:'booking'})})}</script>`
   : "";
 
@@ -178,7 +180,7 @@ function layout({ lang, title, desc, pathname, alt, body, schema, ogImage = "her
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 ${(schema || []).map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join("\n")}
-${trackingTags}
+${trackingTags(lang)}
 </head>
 <body>
 <header class="site-header" id="top">
@@ -223,7 +225,7 @@ ${body}
       </ul>
     </div>
   </div>
-  <div class="wrap footer-bottom">© ${new Date().getFullYear()} ${config.brand} · ${t.rights}</div>
+  <div class="wrap footer-bottom">© ${new Date().getFullYear()} ${config.brand} · ${t.rights} · <a href="${privacyPath(lang)}">${privacyText(lang, { site: "", email: "" }).title}</a></div>
 </footer>
 <a class="wa-float" href="${wa(lang)}" target="_blank" rel="noopener" aria-label="${t.whatsapp}">${icon("wa", 28)}</a>
 <script>
@@ -550,6 +552,18 @@ ${cta(lang)}`,
   </div>
 </section>
 <script>if(location.search.indexOf('sent=1')>-1){document.getElementById('thanks').hidden=false}</script>`,
+  }));
+
+  // PRIVACY
+  const pv = privacyText(lang, { site: "moroccoluxurytents.com", email: config.email });
+  add(privacyPath(lang), layout({
+    lang, title: `${pv.title} | ${config.brand}`, desc: pv.intro, pathname: privacyPath(lang), alt: privacyPath(o === R.es ? "es" : "en"),
+    body: `<section class="section"><div class="wrap" style="max-width:820px">
+<h1>${esc(pv.title)}</h1><p>${esc(pv.intro)}</p>
+${pv.sections.map(x => `<h2>${esc(x.h)}</h2>${x.p.map(y => `<p>${esc(y)}</p>`).join("")}`).join("\n")}
+<p><button type="button" class="btn btn-gold" data-cm-cookies>${esc(pv.cookiesBtn)}</button></p>
+<p><small>${esc(pv.updated)}</small></p>
+</div></section>`,
   }));
 }
 

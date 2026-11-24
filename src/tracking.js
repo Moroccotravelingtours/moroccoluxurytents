@@ -86,6 +86,11 @@
   }
   // Lets a "cookie settings" link reopen the banner: <a href="#" onclick="cmCookies();return false">
   window.cmCookies = function () { showBanner(true); };
+  // ...or any element with the attribute data-cm-cookies (used on the privacy pages)
+  document.addEventListener('click', function (e) {
+    var el = e.target && e.target.closest ? e.target.closest('[data-cm-cookies]') : null;
+    if (el) { e.preventDefault(); showBanner(true); }
+  });
 
   // ---------- Page views on client-side navigation (Next.js) ----------
   // GA4 counts these itself (enhanced measurement); the Meta Pixel needs a PageView.
