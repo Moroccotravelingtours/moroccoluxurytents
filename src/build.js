@@ -174,6 +174,7 @@ function layout({ lang, title, desc, pathname, alt, body, schema, ogImage = "her
 <meta property="og:image" content="${unsplash(photos[ogImage].unsplash, 1200)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1c140d">
+<meta name="facebook-domain-verification" content="b3r9hwkxx46ptgv0x0hoq2pr77i6pw">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
